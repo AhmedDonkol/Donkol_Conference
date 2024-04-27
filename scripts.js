@@ -1,3 +1,24 @@
+// Enhanced interactivity: Real-time countdown
+document.addEventListener('DOMContentLoaded', function() {
+    const countdownDisplay = document.querySelector('#countdown');
+    if (!countdownDisplay) {
+        console.log('Countdown display element not found!');
+        return;
+    }
+
+    const conferenceDate = new Date('2024-06-22T09:00:00'); // Conference start date
+    function updateCountdown() {
+        const now = new Date();
+        const duration = conferenceDate - now;
+        const days = Math.floor(duration / (1000 * 60 * 60 * 24));
+        countdownDisplay.textContent = `${days} days until the conference starts!`;
+        setTimeout(updateCountdown, 86400000); // Update every day
+    }
+
+    updateCountdown();
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
