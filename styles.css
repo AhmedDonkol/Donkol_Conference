@@ -6,10 +6,9 @@
 }
 
 body, html {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Merriweather', serif; /* Serif for body text */
+    background-color: #fafafa; /* Lighter background */
     color: #333;
-    line-height: 1.6;
 }
 
 /* Container for centering content */
@@ -17,15 +16,15 @@ body, html {
     width: 80%;
     max-width: 1200px;
     margin: auto;
-    overflow: visible; /* Changed from 'hidden' to 'visible' to prevent cropping */
+    overflow: visible;
     display: flex;
     flex-direction: column;
 }
 
 /* Header styles */
 header {
-    background: #005a9e;
-    color: #fff;
+    background: #0A192F;
+    color: #EDF2F8;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.4);
     display: flex;
@@ -59,16 +58,41 @@ nav a {
 }
 
 nav a:hover {
-    color: #007bff;
-    transform: scale(1.1);
+    color: #64ffda;
+    transform: translateY(-3px);
 }
+
+/* Countdown display styles */
+#countdown-display {
+    background-color: #0A192F; /* Navy blue background for visibility */
+    color: #EDF2F8; /* Light gray text for contrast */
+    padding: 20px;
+    margin: 20px auto; /* Centering the countdown display */
+    text-align: center; /* Center-align text */
+    border-radius: 10px; /* Rounded corners for aesthetic */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+    max-width: 600px; /* Limiting max width for better readability */
+}
+
+#countdown-display h3 {
+    font-size: 1.5rem; /* Larger font size for the heading */
+    margin-bottom: 10px; /* Space between heading and countdown */
+}
+
+#countdown {
+    font-size: 2rem; /* Larger font size for countdown */
+    font-weight: bold; /* Making countdown bold */
+    letter-spacing: 1px; /* Spacing between letters */
+}
+
 
 /* Hero section styles */
 .hero {
     padding: 50px 0;
-    background: linear-gradient(to right, #0061a8, #63a4ff);
-    color: #fff;
+    background: linear-gradient(to right, #0096c7, #00b4d8);
+    color: #ffffff;
     text-align: center;
+    font-size: 1.2rem;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -125,9 +149,11 @@ footer {
 
 /* Button styles */
 .btn {
-    background-color: #008CBA;
+    background-color: #ef476f;
     color: white;
-    padding: 12px 25px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
     text-decoration: none;
     border: none;
     border-radius: 5px;
@@ -145,6 +171,10 @@ footer {
 
 .btn:hover {
     background-color: #005a9e;
+}
+
+footer {
+    background: #073B4C; /* Dark cyan */
 }
 
 /* Responsive design */
