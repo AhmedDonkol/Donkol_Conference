@@ -1,0 +1,169 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container for centering content */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: visible; /* Changed from 'hidden' to 'visible' to prevent cropping */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    background: #005a9e;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 1s ease-out;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 300;
+    text-transform: none;
+}
+
+/* Navigation styles */
+nav ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Hero section styles */
+.hero {
+    padding: 50px 0;
+    background: linear-gradient(to right, #0061a8, #63a4ff);
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Image styles to prevent cropping */
+.conference-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Ensures centering */
+    object-fit: contain; /* Ensures the image fits within its container */
+}
+
+/* Keyframes for animations */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Styles for different sections */
+.conference-info, .organizing-committee, .conference-fees {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideUp 1s ease-out;
+}
+
+/* Keyframes for slideUp animation */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.conference-info h2, .organizing-committee h2, .conference-fees h2 {
+    color: #005a9e;
+}
+
+/* Footer styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styles */
+.btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn:hover {
+    background-color: #005a9e;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header h1, nav ul li {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+}
