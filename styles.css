@@ -5,43 +5,48 @@
     box-sizing: border-box;
 }
 
-body, html {
-    font-family: 'Merriweather', serif; /* Serif for body text */
-    background-color: #fafafa; /* Lighter background */
+html, body {
+    font-family: 'Roboto', sans-serif; /* Modern, readable font */
+    background-color: #f4f4f9; /* Softer background for ease of reading */
     color: #333;
+    line-height: 1.6;
+    font-size: 18px; /* Increased for better readability */
 }
 
 /* Container for centering content */
 .container {
-    width: 80%;
+    width: 85%;
     max-width: 1200px;
-    margin: auto;
-    overflow: visible;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
 /* Header styles */
 header {
-    background: #0A192F;
-    color: #EDF2F8;
+    background: #0056b3; /* Deep blue for a professional look */
+    color: #ffffff;
     padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideDown 1s ease-out;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
-    font-size: 24px;
-    font-weight: 300;
-    text-transform: none;
+    font-size: 1.8rem;
+    margin-left: 20px;
 }
 
 /* Navigation styles */
+nav {
+    display: flex;
+}
+
 nav ul {
-    padding: 0;
     list-style: none;
     display: flex;
 }
@@ -53,147 +58,118 @@ nav ul li {
 nav a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease-out, transform 0.3s ease;
 }
 
-nav a:hover {
-    color: #64ffda;
-    transform: translateY(-3px);
+nav a:hover, nav a:focus {
+    color: #ffbf00; /* Highlight color */
+    transform: translateY(-2px);
 }
 
 /* Countdown display styles */
 #countdown-display {
-    background-color: #0A192F; /* Navy blue background for visibility */
-    color: #EDF2F8; /* Light gray text for contrast */
+    background-color: #0056b3; /* Consistent with header */
+    color: #ffffff;
     padding: 20px;
-    margin: 20px auto; /* Centering the countdown display */
-    text-align: center; /* Center-align text */
-    border-radius: 10px; /* Rounded corners for aesthetic */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.5); /* Subtle shadow for depth */
-    max-width: 600px; /* Limiting max width for better readability */
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: pulse-animation 2s infinite;
 }
 
 #countdown-display h3 {
-    font-size: 1.5rem; /* Larger font size for the heading */
-    margin-bottom: 10px; /* Space between heading and countdown */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
 
 #countdown {
-    font-size: 2rem; /* Larger font size for countdown */
-    font-weight: bold; /* Making countdown bold */
-    letter-spacing: 1px; /* Spacing between letters */
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
-
 
 /* Hero section styles */
 .hero {
     padding: 50px 0;
-    background: linear-gradient(to right, #0096c7, #00b4d8);
+    background: linear-gradient(to right, #0096c7, #00b4d8); /* Engaging gradient */
     color: #ffffff;
     text-align: center;
-    font-size: 1.2rem;
     animation: fadeIn 2s ease-in-out;
-}
-
-/* Image styles to prevent cropping */
-.conference-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Ensures centering */
-    object-fit: contain; /* Ensures the image fits within its container */
-}
-
-/* Keyframes for animations */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Styles for different sections */
-.conference-info, .organizing-committee, .conference-fees {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    animation: slideUp 1s ease-out;
-}
-
-/* Keyframes for slideUp animation */
-@keyframes slideUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.conference-info h2, .organizing-committee h2, .conference-fees h2 {
-    color: #005a9e;
 }
 
 /* Footer styles */
 footer {
-    background: #333;
-    color: #fff;
+    background: #073B4C; /* Dark cyan for contrast */
+    color: #ffffff;
     text-align: center;
     padding: 10px 0;
     position: relative;
-    bottom: 0;
     width: 100%;
 }
 
 /* Button styles */
 .btn {
-    background-color: #ef476f;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.1rem;
+    background-color: #ff5c5c; /* Vibrant button color */
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
     font-weight: bold;
-    text-decoration: none;
     border: none;
     border-radius: 5px;
     display: inline-block;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
     animation: pulse 2s infinite;
 }
 
-/* Keyframes for pulse animation */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
 .btn:hover {
-    background-color: #005a9e;
+    background-color: #c44569; /* Darker shade on hover for depth */
 }
 
-footer {
-    background: #073B4C; /* Dark cyan */
+/* Image styles to ensure responsiveness and no cropping */
+.conference-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without cropping */
 }
 
-/* Responsive design */
+/* Keyframes for animations */
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive design adjustments */
 @media only screen and (max-width: 768px) {
     .container {
         width: 95%;
     }
 
-    header h1, nav ul li {
-        text-align: center;
+    header h1 {
+        font-size: 1.5rem; /* Slightly smaller for mobile */
     }
 
     nav ul {
         flex-direction: column;
-        margin-top: 10px;
+        align-items: center;
     }
 
     nav ul li {
-        display: block;
-        margin: 5px 0;
+        margin: 10px 0;
+    }
+
+    .btn {
+        padding: 8px 16px; /* Smaller buttons on mobile */
     }
 }
