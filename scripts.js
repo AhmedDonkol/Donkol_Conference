@@ -6,12 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCountdown() {
         const now = new Date();
         const duration = conferenceDate - now;
-
         const days = Math.floor(duration / (1000 * 60 * 60 * 24));
         const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((duration % (1000 * 60)) / 1000);
-
         countdownDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the conference starts!`;
         countdownDisplay.classList.remove('pulse-animation');
         setTimeout(() => {
@@ -27,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         });
     });
 
@@ -37,19 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuButton.addEventListener('click', function() {
         mainNav.classList.toggle('active');
         this.textContent = mainNav.classList.contains('active') ? '✕ Close' : '☰ Menu';
-    });
-
-    // Enhance Form Submission with Validation and responsive feedback
-    const submitButton = document.querySelector('.btn');
-    submitButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        const form = document.querySelector('form'); // Assuming a form exists
-        if (form.checkValidity()) {
-            form.submit();
-            alert('Thank you for your submission!'); // Providing user feedback
-        } else {
-            alert('Please complete all required fields before submitting.');
-        }
     });
 
     // Dynamic Content Loading for Sessions with better error handling
