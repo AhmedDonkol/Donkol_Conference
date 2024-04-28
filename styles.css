@@ -69,19 +69,22 @@ nav a:hover, nav a:focus {
 
 /* Countdown display styles */
 #countdown-display {
-    background-color: #0056b3; /* Consistent with header */
-    color: #ffffff;
+    background-color: #02457a; /* A darker shade of blue for distinction */
+    color: #e0e0e0; /* Soft light grey for text, ensuring readability */
     padding: 20px;
     margin: 20px auto;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
     animation: pulse-animation 2s infinite;
+    font-size: 1.2rem; /* Slightly larger text for emphasis */
+    font-weight: 500; /* Not too bold, maintaining elegance */
 }
 
 #countdown-display h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2rem; /* Larger size for the heading within countdown */
+    margin-bottom: 5px; /* Tighter spacing to keep visual cohesion */
+    color: #ffd700; /* Gold color for an eye-catching accent */
 }
 
 #countdown {
