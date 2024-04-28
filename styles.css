@@ -6,11 +6,11 @@
 }
 
 html, body {
-    font-family: 'Roboto', sans-serif; /* Modern, readable font */
-    background-color: #f4f4f9; /* Softer background for ease of reading */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
-    font-size: 18px; /* Increased for better readability */
+    font-size: 18px;
 }
 
 /* Container for centering content */
@@ -24,7 +24,7 @@ html, body {
 
 /* Header styles */
 header {
-    background: linear-gradient(to right, #0056b3, #0096c7); /* Updated gradient for header */
+    background: linear-gradient(to right, #0056b3, #0096c7);
     color: #ffffff;
     padding: 20px 0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -37,7 +37,7 @@ header {
 }
 
 header h1 {
-    font-size: 1.8rem; /* Adaptive font size for desktop */
+    font-size: 1.8rem;
     margin-left: 20px;
 }
 
@@ -63,28 +63,28 @@ nav a {
 }
 
 nav a:hover, nav a:focus {
-    color: #ffbf00; /* Highlight color */
+    color: #ffbf00;
     transform: translateY(-2px);
 }
 
 /* Countdown display styles */
 #countdown-display {
-    background-color: #02457a; /* A darker shade of blue for distinction */
-    color: #e0e0e0; /* Soft light grey for text, ensuring readability */
+    background-color: #02457a;
+    color: #e0e0e0;
     padding: 20px;
     margin: 20px auto;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     animation: pulse-animation 2s infinite;
-    font-size: 1.2rem; /* Slightly larger text for emphasis */
-    font-weight: 500; /* Not too bold, maintaining elegance */
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 #countdown-display h3 {
-    font-size: 2rem; /* Larger size for the heading within countdown */
-    margin-bottom: 5px; /* Tighter spacing to keep visual cohesion */
-    color: #ffd700; /* Gold color for an eye-catching accent */
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #ffd700;
 }
 
 #countdown {
@@ -96,7 +96,7 @@ nav a:hover, nav a:focus {
 /* Hero section styles */
 .hero {
     padding: 50px 0;
-    background: linear-gradient(to right, #0096c7, #00b4d8); /* Updated gradient for hero */
+    background: linear-gradient(to right, #0096c7, #00b4d8);
     color: #ffffff;
     text-align: center;
     animation: fadeIn 2s ease-in-out;
@@ -104,7 +104,7 @@ nav a:hover, nav a:focus {
 
 /* Footer styles */
 footer {
-    background: #073B4C; /* Dark cyan for contrast */
+    background: #073B4C;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
@@ -114,7 +114,7 @@ footer {
 
 /* Button styles */
 .btn {
-    background-color: #ff5c5c; /* Vibrant button color */
+    background-color: #ff5c5c;
     color: #ffffff;
     padding: 10px 20px;
     font-size: 1rem;
@@ -127,14 +127,14 @@ footer {
 }
 
 .btn:hover {
-    background-color: #c44569; /* Darker shade on hover for depth */
+    background-color: #c44569;
 }
 
 /* Image styles to ensure responsiveness and no cropping */
 .conference-image {
-    width: 100%; /* Full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure the image fits within its container without cropping */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Keyframes for animations */
@@ -162,50 +162,50 @@ footer {
     header {
         flex-direction: column;
         align-items: center;
-        position: relative; /* No longer sticky on mobile */
+        position: relative;
     }
 
     header h1 {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-        margin: 10px 0; /* Additional spacing around the title */
+        font-size: 1.2rem;
+        margin: 10px 0;
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
-        display: none; /* Hide by default */
-        background-color: #0056b3; /* Match header background */
-        top: 60px; /* Position right below the header */
+        display: none;
+        background-color: #0056b3;
+        top: 60px;
         left: 0;
-        border-top: 1px solid #ffffff; /* Add a top border for visual separation */
+        border-top: 1px solid #ffffff;
     }
 
     nav ul.active {
-        display: flex; /* Display when active */
+        display: flex;
     }
 
     nav ul li {
-        width: 100%; /* Full width for each item */
-        text-align: center; /* Center align text */
+        width: 100%;
+        text-align: center;
     }
 
     nav a {
-        padding: 10px; /* Larger tap area for better touch interaction */
-        display: block; /* Make links block to fill space */
+        padding: 10px;
+        display: block;
     }
 
     #countdown-display {
-        font-size: 1rem; /* Smaller text size for mobile */
-        padding: 10px; /* Less padding to save space */
-        margin: 10px auto; /* Keep centered but with less margin */
+        font-size: 1rem;
+        padding: 10px;
+        margin: 10px auto;
     }
 
     #countdown-display h3 {
-        font-size: 1.5rem; /* Smaller heading for mobile */
+        font-size: 1.5rem;
     }
 
     #countdown {
-        font-size: 1.8rem; /* Reduce font size for the countdown timer */
+        font-size: 1.8rem;
     }
 }
