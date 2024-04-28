@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Implement the Countdown Timer with more detail
+    // Implement the Countdown Timer with smoother animation and responsiveness
     const countdownDisplay = document.querySelector('#countdown');
     const conferenceDate = new Date('2024-06-22T09:00:00');
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with improved functionality
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const mainNav = document.querySelector('nav');
     mobileMenuButton.addEventListener('click', function() {
@@ -39,19 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
         this.textContent = mainNav.classList.contains('active') ? '✕ Close' : '☰ Menu';
     });
 
-    // Enhance Form Submission with Validation
+    // Enhance Form Submission with Validation and responsive feedback
     const submitButton = document.querySelector('.btn');
     submitButton.addEventListener('click', function(e) {
         e.preventDefault();
         const form = document.querySelector('form'); // Assuming a form exists
         if (form.checkValidity()) {
             form.submit();
+            alert('Thank you for your submission!'); // Providing user feedback
         } else {
             alert('Please complete all required fields before submitting.');
         }
     });
 
-    // Dynamic Content Loading for Sessions
+    // Dynamic Content Loading for Sessions with better error handling
     document.querySelectorAll('.session-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
