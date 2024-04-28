@@ -1,83 +1,175 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Implement the Countdown Timer
-    const countdownDisplay = document.querySelector('#countdown');
-    const conferenceDate = new Date('2024-06-22T09:00:00');
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    function updateCountdown() {
-        const now = new Date();
-        const duration = conferenceDate - now;
-        const days = Math.floor(duration / (1000 * 60 * 60 * 24));
-        countdownDisplay.textContent = `${days} days until the conference starts!`;
-        countdownDisplay.classList.remove('pulse-animation');
-        setTimeout(() => {
-            countdownDisplay.classList.add('pulse-animation');
-        }, 100); // Add class back after timeout for continuous effect
-        setTimeout(updateCountdown, 86400000);
+html, body {
+    font-family: 'Roboto', sans-serif; /* Modern, readable font */
+    background-color: #f4f4f9; /* Softer background for ease of reading */
+    color: #333;
+    line-height: 1.6;
+    font-size: 18px; /* Increased for better readability */
+}
+
+/* Container for centering content */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    background: #0056b3; /* Deep blue for a professional look */
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease-out, transform 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #ffbf00; /* Highlight color */
+    transform: translateY(-2px);
+}
+
+/* Countdown display styles */
+#countdown-display {
+    background-color: #0056b3; /* Consistent with header */
+    color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: pulse-animation 2s infinite;
+}
+
+#countdown-display h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#countdown {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Hero section styles */
+.hero {
+    padding: 50px 0;
+    background: linear-gradient(to right, #0096c7, #00b4d8); /* Engaging gradient */
+    color: #ffffff;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Footer styles */
+footer {
+    background: #073B4C; /* Dark cyan for contrast */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Button styles */
+.btn {
+    background-color: #ff5c5c; /* Vibrant button color */
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+}
+
+.btn:hover {
+    background-color: #c44569; /* Darker shade on hover for depth */
+}
+
+/* Image styles to ensure responsiveness and no cropping */
+.conference-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the image fits within its container without cropping */
+}
+
+/* Keyframes for animations */
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive design adjustments */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95%;
     }
 
-    updateCountdown();
-
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-    });
-
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mainNav = document.querySelector('nav');
-    mobileMenuButton.addEventListener('click', function() {
-        mainNav.classList.toggle('active');
-        this.textContent = mainNav.classList.contains('active') ? '✕ Close' : '☰ Menu';
-    });
-
-    // Enhance Form Submission with Validation
-    const submitButton = document.querySelector('.btn');
-    submitButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        const form = document.querySelector('form'); // Assuming a form exists
-        if (form.checkValidity()) {
-            form.submit();
-        } else {
-            alert('Please complete all required fields before submitting.');
-        }
-    });
-
-    // Dynamic Content Loading for Sessions
-    document.querySelectorAll('.session-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const sessionId = this.getAttribute('data-session-id');
-            fetchSessionData(sessionId);
-        });
-    });
-
-    function fetchSessionData(sessionId) {
-        fetch(`https://api.yourconference.com/sessions/${sessionId}`)
-            .then(response => response.json())
-            .then(data => {
-                displaySessionData(data);
-            })
-            .catch(error => {
-                console.error('Error loading session data:', error);
-                alert('Failed to load session data. Please try again later.');
-            });
+    header h1 {
+        font-size: 1.5rem; /* Slightly smaller for mobile */
     }
 
-    function displaySessionData(data) {
-        const sessionContainer = document.querySelector('#session-info');
-        sessionContainer.innerHTML = `<h2>${data.title}</h2><p>${data.description}</p>`;
-        sessionContainer.classList.add('fade-in-animation');
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
-});
 
-// Additional Interactive Features
-function addInteractiveFeatures() {
-    const features = ['Live Polls', 'Q&A', 'Interactive Maps'];
-    features.forEach(feature => {
-        console.log(`Feature available: ${feature}`);
-    });
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .btn {
+        padding: 8px 16px; /* Smaller buttons on mobile */
+    }
 }
