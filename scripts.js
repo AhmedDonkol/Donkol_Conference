@@ -1,18 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Implement the Countdown Timer
+    // Implement the Countdown Timer with more detail
     const countdownDisplay = document.querySelector('#countdown');
     const conferenceDate = new Date('2024-06-22T09:00:00');
 
     function updateCountdown() {
         const now = new Date();
         const duration = conferenceDate - now;
+
         const days = Math.floor(duration / (1000 * 60 * 60 * 24));
-        countdownDisplay.textContent = `${days} days until the conference starts!`;
+        const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+
+        countdownDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the conference starts!`;
         countdownDisplay.classList.remove('pulse-animation');
         setTimeout(() => {
             countdownDisplay.classList.add('pulse-animation');
         }, 100); // Add class back after timeout for continuous effect
-        setTimeout(updateCountdown, 86400000);
+        setTimeout(updateCountdown, 1000); // Update every second
     }
 
     updateCountdown();
