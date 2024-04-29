@@ -99,7 +99,16 @@ nav a:hover, nav a:focus {
     background: linear-gradient(to right, #0096c7, #00b4d8);
     color: #ffffff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     animation: fadeIn 2s ease-in-out;
+}
+
+/* Additional style to ensure buttons appear inline and centered */
+.hero .btn {
+    margin-top: 20px;
+    align-self: center;
 }
 
 /* Footer styles */
@@ -122,6 +131,8 @@ footer {
     border: none;
     border-radius: 5px;
     display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
     transition: background-color 0.3s ease-in-out;
     animation: pulse 2s infinite;
 }
