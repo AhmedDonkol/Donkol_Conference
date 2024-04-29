@@ -9,18 +9,18 @@
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <header role="banner">
+    <header>
         <div class="container header-container">
             <h1>The Eighth Early Career Researchers Conference for Basic Sciences, Engineering, and Computer and Information Science (ECC-SEC 2024)</h1>
-            <button class="mobile-menu-button" aria-label="Open and close navigation menu">☰ Menu</button>
-            <nav>
+            <button class="mobile-menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+            <nav id="main-navigation" aria-label="Main navigation">
                 <ul>
-                    <li><a href="#home" aria-label="Navigate to Home section">Home</a></li>
-                    <li><a href="#about" aria-label="Navigate to About section">About</a></li>
-                    <li><a href="#callForPapers" aria-label="Navigate to Call for Papers section">Call for Papers</a></li>
-                    <li><a href="#program" aria-label="Navigate to Program section">Program</a></li>
-                    <li><a href="#venue" aria-label="Navigate to Venue section">Venue</a></li>
-                    <li><a href="#contact" aria-label="Navigate to Contact section">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#callForPapers">Call for Papers</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#venue">Venue</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,44 +30,111 @@
         <p id="countdown"></p>
     </section>
 
-    <main class="container main-content" role="main">
-	<section id="home" class="hero">
-	    <h2>Empowering Early Career Researchers</h2>
-	    <p>Welcome to the official page of ECC-SEC 2024, the leading conference for pioneering research in Basic Sciences, Engineering, and Computer and Information Science.</p>
-	    <a href="Template_Paper.docx" download="Template_Paper.docx" class="btn" role="button" aria-label="Download template paper" id="download-template">Download Template</a>
-	    <a href="https://docs.google.com/forms/d/e/1FAIpQLScC8KoUPWOZxq6wHRxf0MkzFwDXY7PEraEwvE_wwRqpUezI7Q/viewform?usp=sf_link" class="btn" role="button" aria-label="Click to submit your paper" target="_blank">Submit Your Paper</a>
-	</section>
-             <section id="about" class="conference-info">
-            <h2>About The Conference</h2>
-            <p>Welcome to the Eighth Early Career Researchers Conference at South Valley University, Qena, Egypt.</p>
-            <img src="ECC-SEC 2024.jpg" alt="ECC-SEC 2024 Conference" class="conference-image">
+    <main class="container">
+        <section id="home" aria-labelledby="hero-heading" class="hero">
+            <h2 id="hero-heading">Empowering Early Career Researchers</h2>
+            <p>Welcome to the official page of ECC-SEC 2024, the leading conference for pioneering research in Basic Sciences, Engineering, and Computer and Information Science.</p>
+            <a href="Template_Paper.docx" download="Template_Paper.docx" class="btn">Download Template</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScC8KoUPWOZxq6wHRxf0MkzFwDXY7PEraEwvE_wwRqpUezI7Q/viewform?usp=sf_link" class="btn" target="_blank">Submit Your Paper</a>
         </section>
-        <section id="organizers" class="organizing-committee">
-            <h2>Organizing Committee</h2>
-            <ul>
-                <li>Prof. Dr. Ahmed Akawy - University President (Honorary President)</li>
-                <li>Prof. Dr. Ahmed Akawy - Vice President for Postgraduate and Research Affairs (Honorary Supervisor)</li>
-                <li>Prof. Dr. Farag Khodary - Dean of Engineering Faculty (Conference Chairman)</li>
-                <li>Prof. Dr. Emad Ali Ahmed Amer - Dean of Computer and Information Faculty (Honor Conference Chairman)</li>
-                <li>Prof. Dr. Khaled Ebnalwaled Abdel Fattah - Dean of Faculty of Science (Honor Conference Chairman)</li>
-                <li>Osama Amara - Dean of Faculty of Computers and Artificial Intelligence in Hurghada (Honor Conference Chairman)</li>
-                <li>Associate Professor Hussein Mohamed Maghrabie - Vice Dean for Postgraduate Studies and Research Affairs, Faculty of Engineering (Conference Executive Manager)</li>
-                <li>Prof. Dr. Mohamed Ismail Abdelkarim - Vice Dean for Postgraduate Studies and Research Affairs, Faculty of Science (Conference Coordinator)</li>
-                <li>Associate Professor Hany Ahmed Atallah - Assistant Professor in the Electrical Engineering Department, Faculty of Engineering (Conference Coordinator)</li>
-                <li>Dr. Ahmed Abdelbaset Hasan Donkol - Professor Assistant in the Electrical Engineering Department, Faculty of Engineering (Conference Coordinator)</li>
-                <li>Dr. Ahmed Hassan Mohamed Hussein - Professor Assistant in the Mechanical Engineering Department, Faculty of Engineering (Conference Coordinator)</li>
-	        <li>Eng. Hamada Mahsoub Aboulmagd: Professor Assistant in the Mechanical Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Eng. Mohamed Khedry Said Saadallah: Lecturer Assistant in the Civil Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Eng. Ahmed Abdel Aalim Ahmed Ibrahim: Lecturer Assistant in the Electrical Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Eng. Alaa Ottman Fahmy Mostafa: Teaching Assistant in the Civil Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Eng. Mohamed Salah Abdullah: Teaching Assistant in the Mechanical Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Eng. Mohamed Saleem Mohamed Saleem: Teaching Assistant in the Mechanical Engineering Department, Faculty of Engineering - SVU</li>
-        	<li>Sciences: Iman Mohamed Ahmed Omar</li>
-        	<li>Sciences: Alhasan Sayed Mahdy Hassan</li>
-            </ul>
-        </section>
-        <section id="fees" class="conference-fees">
-            <h2>Conference Fees</h2>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About The Conference</h2>
+            <p>The Eighth Early Career Researchers Conference at South Valley University, Qena, Egypt, invites contributions.</p>
+            <img src="ECC-SEC 2024.jpg" alt="Attendees at the ECC-SEC 2024 Conference" class="conference-image">
+		<section id="organizers" aria-labelledby="organizers-heading">
+			<h2 id="organizers-heading">Organizing Committee</h2>
+			<div class="committee-grid">
+				<!-- Member 1 -->
+				<article class="committee-member">
+					<img src="Picture1.jpg" alt="Prof. Dr. Ahmed Akawy, University President" class="committee-photo">
+					<h3>Prof. Dr. Ahmed Akawy</h3>
+					<p>University President <br><span class="role-description">Honorary President & Supervisor</span></p>
+				</article>
+				<!-- Member 2 -->
+				<article class="committee-member">
+					<img src="Picture2.jpg" alt="Prof. Dr. Ahmed Akawy, Vice President" class="committee-photo">
+					<h3>Prof. Dr. Ahmed Akawy</h3>
+					<p>Vice President for Postgraduate and Research Affairs <br><span class="role-description">Honorary Supervisor</span></p>
+				</article>
+				<!-- Member 3 -->
+				<article class="committee-member">
+					<img src="Picture3.jpg" alt="Prof. Dr. Farag Khodary, Dean of Engineering Faculty" class="committee-photo">
+					<h3>Prof. Dr. Farag Khodary</h3>
+					<p>Dean of Engineering Faculty <br><span class="role-description">Conference Chairman</span></p>
+				</article>
+				<!-- Member 4 -->
+				<article class="committee-member">
+					<img src="Picture4.jpg" alt="Prof. Dr. Emad Ali Ahmed Amer, Dean of Computer and Information Faculty" class="committee-photo">
+					<h3>Prof. Dr. Emad Ali Ahmed Amer</h3>
+					<p>Dean of Computer and Information Faculty <br><span class="role-description">Honor Conference Chairman</span></p>
+				</article>
+				<!-- Member 5 -->
+				<article class="committee-member">
+					<img src="Picture5.jpg" alt="Prof. Dr. Khaled Ebnalwaled Abdel Fattah, Dean of Faculty of Science" class="committee-photo">
+					<h3>Prof. Dr. Khaled Ebnalwaled Abdel Fattah</h3>
+					<p>Dean of Faculty of Science <br><span class="role-description">Honor Conference Chairman</span></p>
+				</article>
+				<!-- Member 6 -->
+				<article class="committee-member">
+					<img src="Picture6.jpg" alt="Osama Amara, Dean of Faculty of Computers and Artificial Intelligence" class="committee-photo">
+					<h3>Osama Amara</h3>
+					<p>Dean of Faculty of Computers and Artificial Intelligence in Hurghada <br><span class="role-description">Honor Conference Chairman</span></p>
+				</article>
+				<!-- Member 7 -->
+				<article class="committee-member">
+					<img src="Picture7.jpg" alt="Associate Prof. Hussein Mohamed Maghrabie, Vice Dean for Postgraduate Studies and Research Affairs" class="committee-photo">
+					<h3>Assoc. Prof. Hussein Mohamed Maghrabie</h3>
+					<p>Vice Dean for Postgraduate Studies and Research Affairs, Faculty of Engineering <br><span class="role-description">Conference Executive Manager</span></p>
+				</article>
+				<article class="committee-member">
+					<h3>Assoc. Prof. Hany Ahmed Atallah</h3>
+					<p>Assistant Professor, Electrical Engineering Dept. <br><span class="role-description">Conference Coordinator</span></p>
+				</article>
+				<article class="committee-member">
+					<h3>Dr. Ahmed Abdelbaset Hasan Donkol</h3>
+					<p>Professor Assistant, Electrical Engineering Dept. <br><span class="role-description">Conference Coordinator</span></p>
+				</article>
+				<article class="committee-member">
+					<h3>Dr. Ahmed Hassan Mohamed Hussein</h3>
+					<p>Professor Assistant, Mechanical Engineering Dept. <br><span class="role-description">Conference Coordinator</span></p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Hamada Mahsoub Aboulmagd</h3>
+					<p>Professor Assistant, Mechanical Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Mohamed Khedry Said Saadallah</h3>
+					<p>Lecturer Assistant, Civil Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Ahmed Abdel Aalim Ahmed Ibrahim</h3>
+					<p>Lecturer Assistant, Electrical Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Alaa Ottman Fahmy Mostafa</h3>
+					<p>Teaching Assistant, Civil Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Mohamed Salah Abdullah</h3>
+					<p>Teaching Assistant, Mechanical Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Eng. Mohamed Saleem Mohamed Saleem</h3>
+					<p>Teaching Assistant, Mechanical Engineering Dept.</p>
+				</article>
+				<article class="committee-member">
+					<h3>Iman Mohamed Ahmed Omar</h3>
+					<p>Sciences Specialist</p>
+				</article>
+				<article class="committee-member">
+					<h3>Alhasan Sayed Mahdy Hassan</h3>
+					<p>Sciences Specialist</p>
+				</article>
+			</div>
+		</section>
+
+        <section id="fees" aria-labelledby="fees-heading">
+            <h2 id="fees-heading">Conference Fees</h2>
             <ul>
                 <li>600 EGP for external staff members presenting orally.</li>
                 <li>500 EGP for internal staff members presenting orally.</li>
@@ -77,7 +144,7 @@
     </main>
     <footer>
         <div class="container">
-            <p>© 2024 ECC-SEC 2024 Conference. Connect with us on [Social Media Links]</p>
+            <p>© 2024 ECC-SEC. Connect with us on [Social Media Links]</p>
         </div>
     </footer>
     <script src="scripts.js"></script>
