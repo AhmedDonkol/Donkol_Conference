@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Implement the Countdown Timer with smoother animation and responsiveness
+    // Countdown Timer
     const countdownDisplay = document.querySelector('#countdown');
     const conferenceDate = new Date('2024-06-22T09:00:00');
 
@@ -11,16 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((duration % (1000 * 60)) / 1000);
         countdownDisplay.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the conference starts!`;
-        countdownDisplay.classList.remove('pulse-animation');
-        setTimeout(() => {
-            countdownDisplay.classList.add('pulse-animation');
-        }, 100); // Add class back after timeout for continuous effect
-        setTimeout(updateCountdown, 1000); // Update every second
+        setTimeout(updateCountdown, 1000);
     }
-
     updateCountdown();
 
-    // Smooth Scrolling for Anchor Links
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -31,15 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mobile Menu Toggle with improved functionality
+    // Mobile Menu Toggle
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
     const mainNav = document.querySelector('nav');
+    // Set initial aria-expanded to false and text to ☰ Menu
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.textContent = '☰ Menu';
+
     mobileMenuButton.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
         mainNav.classList.toggle('active');
         this.textContent = mainNav.classList.contains('active') ? '✕ Close' : '☰ Menu';
     });
 
-    // Dynamic Content Loading for Sessions with better error handling
+    // Dynamic Content Loading for Sessions
     document.querySelectorAll('.session-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -66,11 +67,3 @@ document.addEventListener('DOMContentLoaded', function() {
         sessionContainer.classList.add('fade-in-animation');
     }
 });
-
-// Additional Interactive Features
-function addInteractiveFeatures() {
-    const features = ['Live Polls', 'Q&A', 'Interactive Maps'];
-    features.forEach(feature => {
-        console.log(`Feature available: ${feature}`);
-    });
-}
