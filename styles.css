@@ -111,6 +111,18 @@ nav a:hover, nav a:focus {
     align-self: center;
 }
 
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adjust the space between buttons */
+}
+
+.btn {
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
 /* Footer styles */
 footer {
     background: #073B4C;
