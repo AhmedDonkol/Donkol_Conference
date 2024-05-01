@@ -1,205 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECC-SEC 2024 Conference</title>
-    <meta name="description" content="Join the ECC-SEC 2024 Conference for breakthroughs in sciences and engineering, showcasing innovative research from early career scientists in Basic Sciences, Engineering, and Computer and Information Science.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-    <header>
-        <div class="container header-container">
-            <h1>The Eighth Early Career Researchers Conference for Basic Sciences, Engineering, and Computer and Information Science (ECC-SEC 2024)</h1>
-            <button class="mobile-menu-button" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
-            <nav id="main-navigation" aria-label="Main navigation">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#callForPapers">Call for Papers</a></li>
-                    <li><a href="#program">Program</a></li>
-                    <li><a href="#venue">Venue</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="countdown-display">
-        <h3>Countdown to Conference:</h3>
-        <p id="countdown"></p>
-    </section>
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main class="container">
-        <section id="home" aria-labelledby="hero-heading" class="hero">
-            <h2 id="hero-heading">Empowering Early Career Researchers</h2>
-            <p>Welcome to the official page of ECC-SEC 2024, the leading conference for pioneering research in Basic Sciences, Engineering, and Computer and Information Science.</p>
-            <div class="button-group">
-				<a href="Template_Paper.docx" download="Template_Paper.docx" class="btn">Download Template</a>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLScC8KoUPWOZxq6wHRxf0MkzFwDXY7PEraEwvE_wwRqpUezI7Q/viewform?usp=sf_link" class="btn" target="_blank">Submit Your Paper</a>
-				<a href="https://docs.google.com/forms/d/e/1FAIpQLSegMoB_DR_4poM22w_kLomQPQwrZmMMXFe8uP_CRecEshQziA/viewform?usp=sf_link" class="btn btn-attendance" target="_blank">Register Attendance</a>
-				</div>
-		</section>
-        <section id="about" aria-labelledby="about-heading">
-            <h2 id="about-heading">About The Conference</h2>
-            <p>The Eighth Early Career Researchers Conference at South Valley University, Qena, Egypt, invites contributions.</p>
-            <img src="ECC-SEC 2024.jpg" alt="Attendees at the ECC-SEC 2024 Conference" class="conference-image">
-		</section>
-		
-		<section id="fees" aria-labelledby="fees-heading">
-			<h2 id="fees-heading">Conference Fees</h2>
-			<ul>
-				<li>600 EGP for external staff members presenting orally.</li>
-				<li>500 EGP for internal staff members presenting orally.</li>
-				<li>400 EGP for attendees.</li>
-			</ul>
-		</section>		
-		
-		<section id="organizers" aria-labelledby="organizers-heading">
-			<h2 id="organizers-heading">Organizing Committee</h2>
-			<div class="committee-grid">
-				<!-- Member 1 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Ahmed Akawy.jpg" alt="Prof. Dr. Ahmed Akawy, University President" class="committee-photo">
-					<h3>Prof. Dr. Ahmed Akawy</h3>
-					<p>University President <br><span class="role-description">Honorary President & Supervisor</span></p>
-				</article>
-				<!-- Member 2 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Ahmed Akawy.jpg" alt="Prof. Dr. Ahmed Akawy, Vice President" class="committee-photo">
-					<h3>Prof. Dr. Ahmed Akawy</h3>
-					<p>Vice President for Postgraduate and Research Affairs <br><span class="role-description">Honorary Supervisor</span></p>
-				</article>
-				<!-- Member 3 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Farag Khodary.jpg" alt="Prof. Dr. Farag Khodary, Dean of Engineering Faculty" class="committee-photo">
-					<h3>Prof. Dr. Farag Khodary</h3>
-					<p>Dean of Engineering Faculty <br><span class="role-description">Conference Chairman</span></p>
-				</article>
-				<!-- Member 4 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Emad Ali.jpg" alt="Prof. Dr. Emad Ali Ahmed Amer, Dean of Computer and Information Faculty" class="committee-photo">
-					<h3>Prof. Dr. Emad Ali Ahmed Amer</h3>
-					<p>Dean of Computer and Information Faculty <br><span class="role-description">Honor Conference Chairman</span></p>
-				</article>
-				<!-- Member 5 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Khaled Ebnalwaled.jpg" alt="Prof. Dr. Khaled Ebnalwaled Abdel Fattah, Dean of Faculty of Science" class="committee-photo">
-					<h3>Prof. Dr. Khaled Ebnalwaled Abdel Fattah</h3>
-					<p>Dean of Faculty of Science <br><span class="role-description">Honor Conference Chairman</span></p>
-				</article>
-				<!-- Member 6 -->
-				<article class="committee-member">
-					<img src="Prof. Dr. Osama Amara.jpg" alt="Prof. Dr. Osama Amara, Dean of Faculty of Computers and Artificial Intelligence" class="committee-photo">
-					<h3>Prof. Dr. Osama Amara</h3>
-					<p>Dean of Faculty of Computers and Artificial Intelligence in Hurghada <br><span class="role-description">Honor Conference Chairman</span></p>
-				</article>
-				<!-- Member 7 -->
-				<article class="committee-member">
-					<img src="Assoc. Prof. Hussein Mohamed.jpg" alt="Associate Prof. Hussein Mohamed Maghrabie, Vice Dean for Postgraduate Studies and Research Affairs" class="committee-photo">
-					<h3>Assoc. Prof. Hussein Mohamed Maghrabie</h3>
-					<p>Vice Dean for Postgraduate Studies and Research Affairs, Faculty of Engineering <br><span class="role-description">Conference Executive Manager</span></p>
-				</article>
-				<!-- Member 8 -->
-				<article class="committee-member">
-					<img src="Prof. Mohamed Ismail.jpg" alt="Prof. Mohamed Ismail Ahmed AbdelKareem, Vice Dean for Postgraduate Studies and Research Affairs, Faculty of science" class="committee-photo">
-					<h3>Prof. Mohamed Ismail Ahmed AbdelKareem</h3>
-					<p>Vice Dean for Postgraduate Studies and Research Affairs, Faculty of science <br><span class="role-description">Conference Coordinator</span></p>
-				</article>
-				<!-- Member 9 -->
-				<article class="committee-member">
-					<img src="Assoc. Prof. Hany Ahmed.jpg" alt="Assoc. Prof. Hany Ahmed Atallah, Assistant Professor, Electrical Engineering Dept." class="committee-photo">
-					<h3>Assoc. Prof. Hany Ahmed Atallah</h3>
-					<p>Assistant Professor, Electrical Engineering Dept. <br><span class="role-description">Conference Coordinator</span></p>
-				</article>
-				<!-- Member 10 -->
-				<article class="committee-member">
-					<img src="Dr. Ahmed Donkol.jpg" alt="Dr. Ahmed Donkol, Professor Assistant, Electrical Engineering Dept." class="committee-photo">
-					<h3>Dr. Ahmed Donkol</h3>
-					<p>Professor Assistant, Electrical Engineering Dept. <br><span class="role-description">Technical Conference Coordinator</span></p>
-				</article>
-				<!-- Member 11 -->
-				<article class="committee-member">
-					<img src="Dr. Ahmed Hassan.jpg" alt="Dr. Ahmed Hassan Mohamed Hussein, Professor Assistant, Mechanical Engineering Dept." class="committee-photo">
-					<h3>Dr. Ahmed Hassan Mohamed Hussein</h3>
-					<p>Professor Assistant, Mechanical Engineering Dept. <br><span class="role-description">Technical Conference Coordinator</span></p>
-				</article>
-				<!-- Member 12 -->
-				<article class="committee-member">
-					<img src="Eng. Hamada Mohasab.jpg" alt="Eng. Hamada Mohasab Aboelmagd, Lecturer Assistant, Mechanical Engineering Dept." class="committee-photo">
-					<h3>Eng. Hamada Mohasab Aboelmagd</h3>
-					<p>Lecturer Assistant, Mechanical Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 13 -->
-				<article class="committee-member">
-					<img src="Eng. Mostafa Mohamed.jpg" alt="Eng. Mostafa Mohamed Mostafa, Lecturer Assistant, Mechanical Engineering Dept." class="committee-photo">
-					<h3>Eng. Mostafa Mohamed Mostafa</h3>
-					<p>Lecturer Assistant, Mechanical Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>			
-				<!-- Member 14 -->
-				<article class="committee-member">
-					<img src="Eng. Mohamed Khedry.jpg" alt="Eng. Mohamed Khodary Saied Saadallah, Lecturer Assistant, Civil Engineering Dept." class="committee-photo">
-					<h3>Eng. Mohamed Khodary Saied Saadallah</h3>
-					<p>Lecturer Assistant, Civil Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 15 -->
-				<article class="committee-member">
-					<img src="Eng. Ahmed Abdelaleem.jpg" alt="Eng. Ahmed Abdelaleem Ahmed Ibrahim, Lecturer Assistant, Electrical Engineering Dept." class="committee-photo">
-					<h3>Eng. Ahmed Abdelaleem Ahmed Ibrahim</h3>
-					<p>Lecturer Assistant, Electrical Engineering Dept. <br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				</article>
-				<!-- Member 16 -->
-				<article class="committee-member">
-					<img src="Eng. Elsayed Abdelhady.jpg" alt="Eng. Elsayed Abdelhady Abdelsamea Abulela, Lecturer Assistant, Civil Engineering Dept." class="committee-photo">
-					<h3>Eng. Elsayed Abdelhady Abdelsamea Abulela</h3>
-					<p>Teaching Assistant, Civil Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 17 -->
-				<article class="committee-member">
-					<img src="Eng. ALaa Etman.jpg" alt="Eng. ALaa Etman Fahmy Mostafa, Lecturer Assistant, Civil Engineering Dept." class="committee-photo">
-					<h3>Eng. ALaa Etman Fahmy Mostafa</h3>
-					<p>Teaching Assistant, Civil Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 18 -->
-				<article class="committee-member">
-					<img src="Eng. Mostafa Mahmoud.jpg" alt="Eng. Mostafa Mahmoud Hefny Omar, Lecturer Assistant, Electrical Engineering Dept." class="committee-photo">
-					<h3>Eng. Mostafa Mahmoud Hefny Omar</h3>
-					<p>Teaching Assistant, Electrical Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 19 -->
-				<article class="committee-member">
-					<img src="Eng. Mohamed Salah.jpg" alt="Eng. Mohamed Salah Abdullah, Lecturer Assistant, Mechanical Engineering Dept." class="committee-photo">
-					<h3>Eng. Mohamed Salah Abdullah</h3>
-					<p>Teaching Assistant, Mechanical Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 20 -->
-				<article class="committee-member">
-					<img src="Eng. Mohamed Selim.jpg" alt="Eng. Mohamed Selim Mohamed, Lecturer Assistant, Mechanical Engineering Dept." class="committee-photo">
-					<h3>Eng. Mohamed Selim Mohamed</h3>
-					<p>Teaching Assistant, Mechanical Engineering Dept.<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 21 -->
-				<article class="committee-member">
-					<h3>Iman Mohamed Ahmed Omar</h3>
-					<p>Sciences Specialist<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-				<!-- Member 22 -->
-				<article class="committee-member">
-					<h3>Alhasan Sayed Mahdy Hassan</h3>
-					<p>Sciences Specialist<br><span class="role-description">Conference Secretariat</span></p>
-				</article>
-			</div>
-		</section>
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    font-size: 18px;
+}
 
+/* Main Container */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Header Styles */
+header {
+    background: linear-gradient(to right, #0056b3, #0096c7);
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    </main>
-    <footer>
-        <div class="container">
-            <p>© 2024 ECC-SEC. Connect with us on [Social Media Links]</p>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
-</body>
-</html>
+header h1 {
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease-out, transform 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: #ffbf00;
+    transform: translateY(-2px);
+}
+
+/* Countdown Display Styles */
+#countdown-display {
+    background-color: #02457a;
+    color: #e0e0e0;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    animation: pulse-animation 2s infinite;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#countdown-display h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #ffd700;
+}
+
+#countdown {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Hero Section Styles */
+.hero {
+    padding: 50px 0;
+    background: linear-gradient(to right, #0096c7, #00b4d8);
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    align-self: center;
+}
+
+/* Button Group Styles */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #ff5c5c;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: #c44569;
+}
+
+/* Conference Fees Section */
+#fees {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+#fees h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffdd55;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#fees ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#fees li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#fees li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background: #073B4C;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 768px) {
+    .container, header, nav ul, .button-group, .btn {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    header {
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #countdown-display {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .btn {
+        padding: 8px 5px;
+    }
+}
+
+/* Initial hidden state for mobile navigation */
+@media only screen and (max-width: 768px) {
+    #main-navigation {
+        display: none;
+    }
+    #main-navigation.is-active {
+        display: block;
+    }
+}
+
+/* Image Styles */
+.conference-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Committee Member Styles */
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.committee-member {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.committee-member h3 {
+    color: #333333;
+    font-size: 18px;
+    margin-top: 16px;
+    margin-bottom: 5px;
+}
+
+.committee-member img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.role-description {
+    font-size: 14px;
+    font-style: italic;
+    color: #555555;
+    margin-top: 5px;
+}
+
+.introduction {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #333333;
+}
+
+/* Animation Keyframes */
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
