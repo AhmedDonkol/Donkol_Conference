@@ -111,6 +111,7 @@ nav a:hover, nav a:focus {
     align-self: center;
 }
 
+/* Adjustments for the buttons on all screen sizes */
 .button-group {
     display: flex;
     justify-content: center;
@@ -120,7 +121,33 @@ nav a:hover, nav a:focus {
 
 .btn {
     white-space: nowrap; /* Prevents text from wrapping */
+    padding: 10px 20px; /* Adjust padding to ensure buttons are not too large */
 }
+
+/* Responsive design adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px; /* Increase gap for better visibility between buttons */
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        text-align: center; /* Center the text inside the button */
+    }
+
+    .container {
+        width: 95%; /* Increase the width to use more space */
+    }
+}
+
+/* Optional: Further responsiveness for very small screens */
+@media only screen and (max-width: 480px) {
+    .btn {
+        padding: 8px 10px; /* Reduce padding to fit smaller screens */
+    }
+}
+
 
 
 /* Footer styles */
