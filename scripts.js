@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mobile Menu Toggle
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mainNav = document.querySelector('nav');
+    const mainNav = document.querySelector('#main-navigation');
     // Set initial aria-expanded to false and text to ☰ Menu
     mobileMenuButton.setAttribute('aria-expanded', 'false');
     mobileMenuButton.textContent = '☰ Menu';
@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuButton.addEventListener('click', function() {
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
-        mainNav.classList.toggle('active');
-        this.textContent = mainNav.classList.contains('active') ? '✕ Close' : '☰ Menu';
+        mainNav.classList.toggle('is-active'); // Change class here to match CSS
+        this.textContent = mainNav.classList.contains('is-active') ? '✕ Close' : '☰ Menu';
     });
 
     // Dynamic Content Loading for Sessions
