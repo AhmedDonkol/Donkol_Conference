@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Global Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ html, body {
     font-size: 18px;
 }
 
-/* Container for centering content */
+/* Main Container */
 .container {
     width: 85%;
     max-width: 1200px;
@@ -22,7 +22,7 @@ html, body {
     flex-direction: column;
 }
 
-/* Header styles */
+/* Header Styles */
 header {
     background: linear-gradient(to right, #0056b3, #0096c7);
     color: #ffffff;
@@ -41,7 +41,7 @@ header h1 {
     margin-left: 20px;
 }
 
-/* Navigation styles */
+/* Navigation Styles */
 nav {
     display: flex;
 }
@@ -67,7 +67,7 @@ nav a:hover, nav a:focus {
     transform: translateY(-2px);
 }
 
-/* Countdown display styles */
+/* Countdown Display Styles */
 #countdown-display {
     background-color: #02457a;
     color: #e0e0e0;
@@ -93,7 +93,7 @@ nav a:hover, nav a:focus {
     letter-spacing: 1px;
 }
 
-/* Hero section styles */
+/* Hero Section Styles */
 .hero {
     padding: 50px 0;
     background: linear-gradient(to right, #0096c7, #00b4d8);
@@ -105,92 +105,20 @@ nav a:hover, nav a:focus {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Additional style to ensure buttons appear inline and centered */
 .hero .btn {
     margin-top: 20px;
     align-self: center;
 }
 
-/* Adjustments for the buttons on all screen sizes */
+/* Button Group Styles */
 .button-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Adjust the space between buttons */
+    gap: 10px;
 }
 
-.btn {
-    white-space: nowrap; /* Prevents text from wrapping */
-    padding: 10px 20px; /* Adjust padding to ensure buttons are not too large */
-}
-
-/* Responsive adjustments for smaller screens */
-@media only screen and (max-width: 768px) {
-    .button-group {
-        flex-direction: column;  /* Ensures buttons stack vertically */
-        width: 100%;             /* Ensures button group uses full container width */
-        align-items: center;     /* Centers buttons in the stack */
-        gap: 15px;               /* Space between buttons */
-    }
-
-    .btn {
-        width: calc(100% - 20px); /* Full width minus some padding for aesthetics */
-        padding: 12px 10px;     /* Sufficient padding for touch targets */
-    }
-
-    .container {
-        width: 95%;             /* Slight reduction for edge padding */
-    }
-
-    header {
-        flex-direction: column; /* Stacks header elements vertically */
-        align-items: center;    /* Center-align header contents */
-    }
-
-    nav ul {
-        width: 100%;            /* Full width for mobile navigation */
-        display: block;         /* Makes sure nav is visible */
-        padding: 0;
-        gap: 10px;              /* Adds space between navigation items */
-    }
-
-    nav ul li {
-        text-align: center;     /* Centers nav items */
-    }
-
-    header h1 {
-        font-size: 1.5rem;      /* Adjusts heading size for smaller screens */
-        text-align: center;     /* Ensures the title is centered */
-        margin: 10px 0;         /* Top and bottom margin for spacing */
-    }
-
-    #countdown-display {
-        font-size: 1rem;
-        padding: 10px;          /* Reduces padding for smaller display areas */
-    }
-}
-
-/* Further adjustments for very small screens */
-@media only screen and (max-width: 480px) {
-    .btn {
-        padding: 8px 5px;       /* Reduces padding to accommodate smaller screens */
-    }
-}
-
-
-
-
-/* Footer styles */
-footer {
-    background: #073B4C;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-}
-
-/* Button styles */
+/* Button Styles */
 .btn {
     background-color: #ff5c5c;
     color: #ffffff;
@@ -204,92 +132,108 @@ footer {
     margin-bottom: 10px;
     transition: background-color 0.3s ease-in-out;
     animation: pulse 2s infinite;
+    white-space: nowrap;
 }
 
 .btn:hover {
     background-color: #c44569;
 }
 
-/* Image styles to ensure responsiveness and no cropping */
+/* Conference Fees Section */
+#fees {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+#fees h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #ffdd55;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#fees ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#fees li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#fees li:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background: #073B4C;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 768px) {
+    .container, header, nav ul, .button-group, .btn {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    header {
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #countdown-display {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .btn {
+        padding: 8px 5px;
+    }
+}
+
+/* Image Styles */
 .conference-image {
     width: 100%;
     height: auto;
     object-fit: contain;
 }
 
-/* Keyframes for animations */
-@keyframes pulse-animation {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* Responsive design adjustments */
-@media only screen and (max-width: 768px) {
-    .container {
-        width: 95%;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-    }
-
-    header h1 {
-        font-size: 1.2rem;
-        margin: 10px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        display: none;
-        background-color: #0056b3;
-        top: 60px;
-        left: 0;
-        border-top: 1px solid #ffffff;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav a {
-        padding: 10px;
-        display: block;
-    }
-
-    #countdown-display {
-        font-size: 1rem;
-        padding: 10px;
-        margin: 10px auto;
-    }
-
-    #countdown-display h3 {
-        font-size: 1.5rem;
-    }
-
-    #countdown {
-        font-size: 1.8rem;
-    }
-}
-
+/* Committee Member Styles */
 .committee-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -314,20 +258,17 @@ footer {
 }
 
 .committee-member img {
-    width: 100px;  /* Adjust the width as needed */
+    width: 100px;
     height: auto;
-    border-radius: 50%; /* Circular images */
-    margin: 0 auto; /* Center the image */
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
 .role-description {
-    display: block;
     font-size: 14px;
     font-style: italic;
     color: #555555;
     margin-top: 5px;
-}
-
 }
 
 .introduction {
@@ -335,4 +276,20 @@ footer {
     margin-bottom: 20px;
     font-size: 1.1em;
     color: #333333;
+}
+
+/* Animation Keyframes */
+@keyframes pulse-animation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
