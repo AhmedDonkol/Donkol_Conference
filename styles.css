@@ -124,29 +124,57 @@ nav a:hover, nav a:focus {
     padding: 10px 20px; /* Adjust padding to ensure buttons are not too large */
 }
 
-/* Responsive design adjustments for smaller screens */
+/* Responsive adjustments for all devices */
 @media only screen and (max-width: 768px) {
     .button-group {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 15px; /* Increase gap for better visibility between buttons */
+        flex-direction: column;  /* Stack buttons vertically */
+        gap: 15px;              /* Increase gap for better visibility between buttons */
     }
 
     .btn {
-        width: 100%; /* Full width buttons */
-        text-align: center; /* Center the text inside the button */
+        width: 100%;            /* Full width buttons */
+        text-align: center;     /* Center the text inside the button */
+        padding: 12px 10px;     /* Adjust padding to make the buttons more touch-friendly */
     }
 
-    .container {
-        width: 95%; /* Increase the width to use more space */
+    .container, .header-container {
+        width: 95%;             /* Increase the width to use more space */
+    }
+
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        text-align: center;     /* Center align the text in the header */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;            /* Full width for nav items */
+    }
+
+    header h1 {
+        font-size: 1.2rem;      /* Adjust the font size of the header title */
+        margin: 10px 0;         /* Adjust margin to reduce space */
     }
 }
 
-/* Optional: Further responsiveness for very small screens */
+/* Additional responsiveness for very small screens */
 @media only screen and (max-width: 480px) {
     .btn {
-        padding: 8px 10px; /* Reduce padding to fit smaller screens */
+        padding: 10px 5px;      /* Further reduce padding for very small screens */
+    }
+
+    .header-container, .button-group {
+        flex-direction: column; /* Ensure stacking to prevent overflow */
+    }
+
+    nav ul.active {
+        display: block;         /* Ensure navigation is accessible and stacks vertically */
     }
 }
+
 
 
 
