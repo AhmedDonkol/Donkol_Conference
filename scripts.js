@@ -21,7 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const offsetTop = target.getBoundingClientRect().top;
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const buffer = 20; // Adjust this value as needed
+                const targetPosition = offsetTop + window.scrollY - headerHeight - buffer; // Adjusted position
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });
