@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Countdown Timer
     const countdownDisplay = document.querySelector('#countdown');
-    const conferenceDate = new Date('2024-06-22T09:00:00');
+    const conferenceDate = new Date('2024-07-22T09:00:00');
 
     function updateCountdown() {
         const now = new Date();
